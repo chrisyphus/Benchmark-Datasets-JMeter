@@ -1,0 +1,3 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1669004557366,1422,Connect to database,200,OK,Walmart users 1-1,text,true,,41,0,1,1,null,0,0,0
+1669004558790,30130,Read from database,200,OK,Walmart users 1-1,text,true,,317,0,1,1,null,0,0,0
