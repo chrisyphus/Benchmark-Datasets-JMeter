@@ -72,7 +72,6 @@ import static com.mongodb.client.model.Filters.*;
 try {
 	//create_string = &quot;mongodb://host1:27017&quot;
 	//MongoClient mongoClient = MongoClients.create(create_string)
-
 	ServerAddress seed1 = new ServerAddress(&quot;127.0.0.1&quot;, 27017);
 	MongoClientSettings settings = MongoClientSettings.builder().applyToClusterSettings(builder -&gt; builder.hosts(Arrays.asList(seed1))).build();
 	MongoClient mongoClient = MongoClients.create(settings);
@@ -90,13 +89,71 @@ try {
 	}
 	
 	return  &quot;Matches found: \n&quot; + res; 
-//	return &quot;Connected to &quot; + vars.get(&quot;collectionName&quot;);
-	//MongoClient.close() //Closes instance
+	// MongoClient.close() //Closes instance
 	
 } catch(Exception e){
 	return &quot;Exception: &quot; + e;
 }</stringProp>
           <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Add to the database" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.MongoException;
+import com.mongodb.client.FindIterable;
+import com.mongodb.ConnectionString;
+import com.mongodb.ServerAddress;
+import com.mongodb.MongoCredential;
+import com.mongodb.MongoClientOptions;
+import com.mongodb.BasicDBObject
+import com.mongodb.client.MongoCursor;
+import java.util.Arrays;
+import org.bson.Document;
+import org.bson.BsonDocument;
+import static com.mongodb.client.model.Filters.*;
+
+try {
+	//create_string = &quot;mongodb://host1:27017&quot;
+	//MongoClient mongoClient = MongoClients.create(create_string)
+	ServerAddress seed1 = new ServerAddress(&quot;127.0.0.1&quot;, 27017);
+	MongoClientSettings settings = MongoClientSettings.builder().applyToClusterSettings(builder -&gt; builder.hosts(Arrays.asList(seed1))).build();
+	MongoClient mongoClient = MongoClients.create(settings);
+
+	//TO-DO: Update to include changing of addition
+	MongoDatabase db = mongoClient.getDatabase(vars.get(&quot;databaseName&quot;));
+	MongoCollection &lt;Document&gt; collection = db.getCollection(vars.get(&quot;collectionName&quot;));
+
+
+	// note, previously tried db.collection.insertOne, db.collection.insertOne, and collection.insertOne
+	collection.insertOne({ 
+		Store: 42424289, 
+		Date: &quot;12/5/2022&quot;, 
+		Temperature: 68.99, 
+		Fuel_Price: 2.72, 
+		MarkDown1: &quot;0&quot;, 
+		MarkDown2: &quot;0&quot;, 
+		MarkDown3: &quot;0&quot;, 
+		MarkDown4: &quot;0&quot;, 
+		MarkDown5: &quot;0&quot;, 
+		CPI: 211.215635, 
+		Unemployment: 8.106, 
+		IsHoliday: false
+	})
+ 
+	// MongoClient.close() //Closes instance
+	return  &quot;Added to database and collection&quot;;
+	
+} catch(Exception e){
+	return &quot;Exception: &quot; + e;
+}</stringProp>
         </JSR223Sampler>
         <hashTree/>
         <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Delete from database" enabled="true">
@@ -136,14 +193,14 @@ try {
 	MongoCollection &lt;Document&gt; collection = db.getCollection(vars.get(&quot;collectionName&quot;));
 	collection.deleteOne(Filters.eq(&quot;IsHoliday&quot;, false))
 
-	return  &quot;Deleted query&quot; //adjust for multiple queries
+	return  &quot;Deleted.&quot; //adjust for multiple queries
 	
 } catch(Exception e){
 	return &quot;Exception: &quot; + e;
 }</stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Update the database" enabled="true">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Update the database" enabled="false">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -165,18 +222,22 @@ import java.util.Arrays;
 import org.bson.Document;
 import org.bson.BsonDocument;
 import static com.mongodb.client.model.Filters.*;
+import com.mongodb.client.model.UpdateOptions;
+import com.mongodb.client.model.Updates;
+import com.mongodb.client.result.UpdateResult;
+
 
 try {
 	ServerAddress seed1 = new ServerAddress(&quot;127.0.0.1&quot;, 27017);
 	MongoClientSettings settings = MongoClientSettings.builder().applyToClusterSettings(builder -&gt; builder.hosts(Arrays.asList(seed1))).build();
 	MongoClient mongoClient = MongoClients.create(settings);
 
-	//TO-DO: Update to include changing of search query
 	MongoDatabase db = mongoClient.getDatabase(vars.get(&quot;databaseName&quot;));
 	MongoCollection &lt;Document&gt; collection = db.getCollection(vars.get(&quot;collectionName&quot;));
 
 	FindIterable&lt;Document&gt; docs = collection.find(eq(&quot;IsHoliday&quot;, false));
 	MongoCursor&lt;Document&gt; cursor = docs.iterator();
+	
 	String res=&quot;&quot;;
 	while (cursor.hasNext()) {
 		Document doc = cursor.next();
@@ -184,8 +245,6 @@ try {
 	}
 	
 	return  &quot;Matches found: \n&quot; + res; 
-//	return &quot;Connected to &quot; + vars.get(&quot;collectionName&quot;);
-	//MongoClient.close() //Closes instance
 	
 } catch(Exception e){
 	return &quot;Exception: &quot; + e;
@@ -229,7 +288,7 @@ try {
           <stringProp name="filename">resultsFromMongoWalmartTest.txt</stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -266,7 +325,7 @@ try {
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="false">
           <boolProp name="displayJMeterProperties">true</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
           <boolProp name="displaySystemProperties">true</boolProp>
