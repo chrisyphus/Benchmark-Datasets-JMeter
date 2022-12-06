@@ -47,13 +47,11 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
       </ThreadGroup>
       <hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Connect to database" enabled="true">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Read from database" enabled="true">
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
-          <stringProp name="script">package fundamentals;
-
-import com.mongodb.client.MongoClients;
+          <stringProp name="script">import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -78,23 +76,20 @@ try {
 	ServerAddress seed1 = new ServerAddress(&quot;127.0.0.1&quot;, 27017);
 	MongoClientSettings settings = MongoClientSettings.builder().applyToClusterSettings(builder -&gt; builder.hosts(Arrays.asList(seed1))).build();
 	MongoClient mongoClient = MongoClients.create(settings);
-	
+
+	//TO-DO: Update to include changing of search query
 	MongoDatabase db = mongoClient.getDatabase(vars.get(&quot;databaseName&quot;));
 	MongoCollection &lt;Document&gt; collection = db.getCollection(vars.get(&quot;collectionName&quot;));
-	//SampleResult result = new sampleResult();
 
-//	vars.putObject(&quot;collection&quot;, collection);
-//	MongoCollection&lt;Document&gt; collectionObject = vars.getObject(&quot;collection&quot;);
-//	Document match = .first();
-	FindIterable&lt;Document&gt; docs = collection.find(eq(&quot;IsHoliday&quot;,&apos;FALSE&apos;));
+	FindIterable&lt;Document&gt; docs = collection.find(eq(&quot;IsHoliday&quot;, false));
 	MongoCursor&lt;Document&gt; cursor = docs.iterator();
 	String res=&quot;&quot;;
 	while (cursor.hasNext()) {
 		Document doc = cursor.next();
-		res=res+doc.toString();
+		res=res+doc.toString() + &quot;\n&quot;;
 	}
 	
-	return  &quot;Match from store &quot; + res + &quot; was found&quot;; 
+	return  &quot;Matches found: \n&quot; + res; 
 //	return &quot;Connected to &quot; + vars.get(&quot;collectionName&quot;);
 	//MongoClient.close() //Closes instance
 	
@@ -104,51 +99,97 @@ try {
           <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Read from database" enabled="false">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Delete from database" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="cacheKey">true</stringProp>
-          <stringProp name="script">package fundamentals;
-
-import com.mongodb.client.MongoClients;
+          <stringProp name="script">import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoException;
-
+import com.mongodb.client.FindIterable;
 import com.mongodb.ConnectionString;
 import com.mongodb.ServerAddress;
 import com.mongodb.MongoCredential;
 import com.mongodb.MongoClientOptions;
-
+import com.mongodb.BasicDBObject
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.model.Filters;
 import java.util.Arrays;
 import org.bson.Document;
 import org.bson.BsonDocument;
-import org.bson.types.ObjectId;
-import static com.mongodb.client.model.Filters.eq
-
 import static com.mongodb.client.model.Filters.*;
 
 try {
-	//Document match = collection_instance.find(eq(&quot;Data&quot;, &quot;2/5/2010&quot;)).first(); //do a for-each here. Use a find-string.
+	//create_string = &quot;mongodb://host1:27017&quot;
+	//MongoClient mongoClient = MongoClients.create(create_string)
+
+	ServerAddress seed1 = new ServerAddress(&quot;127.0.0.1&quot;, 27017);
+	MongoClientSettings settings = MongoClientSettings.builder().applyToClusterSettings(builder -&gt; builder.hosts(Arrays.asList(seed1))).build();
+	MongoClient mongoClient = MongoClients.create(settings);
+
+	//TO-DO: Update to include changing of search query
+	MongoDatabase db = mongoClient.getDatabase(vars.get(&quot;databaseName&quot;));
 	MongoCollection &lt;Document&gt; collection = db.getCollection(vars.get(&quot;collectionName&quot;));
-	//SampleResult result = new sampleResult();
+	collection.deleteOne(Filters.eq(&quot;IsHoliday&quot;, false))
 
-	vars.putObject(&quot;collection&quot;, collection);
-//	MongoCollection&lt;Document&gt; collectionObject = vars.getObject(&quot;collection&quot;);
-	Document match = collection.find().first();
-	return  &quot;Match from store &quot; + match.toString() + &quot; was found&quot;; 
-	MongoCollection&lt;Document&gt; collectionObject = vars.getObject(&quot;collection&quot;);
-	Document match = collectionObject.find(eq(&quot;Date&quot;, &quot;2/5/2010&quot;)).first();
-	return  &quot;Match from store &quot; + match.get(&quot;_Store&quot;).toString() + &quot; was found&quot;; 
-} 
+	return  &quot;Deleted query&quot; //adjust for multiple queries
+	
+} catch(Exception e){
+	return &quot;Exception: &quot; + e;
+}</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Update the database" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.MongoException;
+import com.mongodb.client.FindIterable;
+import com.mongodb.ConnectionString;
+import com.mongodb.ServerAddress;
+import com.mongodb.MongoCredential;
+import com.mongodb.MongoClientOptions;
+import com.mongodb.BasicDBObject
+import com.mongodb.client.MongoCursor;
+import java.util.Arrays;
+import org.bson.Document;
+import org.bson.BsonDocument;
+import static com.mongodb.client.model.Filters.*;
 
-catch(Exception e) {
-	return &quot;Error, Exception: &quot; + e
-}
- </stringProp>
+try {
+	ServerAddress seed1 = new ServerAddress(&quot;127.0.0.1&quot;, 27017);
+	MongoClientSettings settings = MongoClientSettings.builder().applyToClusterSettings(builder -&gt; builder.hosts(Arrays.asList(seed1))).build();
+	MongoClient mongoClient = MongoClients.create(settings);
+
+	//TO-DO: Update to include changing of search query
+	MongoDatabase db = mongoClient.getDatabase(vars.get(&quot;databaseName&quot;));
+	MongoCollection &lt;Document&gt; collection = db.getCollection(vars.get(&quot;collectionName&quot;));
+
+	FindIterable&lt;Document&gt; docs = collection.find(eq(&quot;IsHoliday&quot;, false));
+	MongoCursor&lt;Document&gt; cursor = docs.iterator();
+	String res=&quot;&quot;;
+	while (cursor.hasNext()) {
+		Document doc = cursor.next();
+		res=res+doc.toString() + &quot;\n&quot;;
+	}
+	
+	return  &quot;Matches found: \n&quot; + res; 
+//	return &quot;Connected to &quot; + vars.get(&quot;collectionName&quot;);
+	//MongoClient.close() //Closes instance
+	
+} catch(Exception e){
+	return &quot;Exception: &quot; + e;
+}</stringProp>
         </JSR223Sampler>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
