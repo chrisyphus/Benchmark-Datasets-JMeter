@@ -133,23 +133,23 @@ try {
 
 
 	// note, previously tried db.collection.insertOne, db.collection.insertOne, and collection.insertOne
-	collection.insertOne({ 
-		Store: 42424289, 
-		Date: &quot;12/5/2022&quot;, 
-		Temperature: 68.99, 
-		Fuel_Price: 2.72, 
-		MarkDown1: &quot;0&quot;, 
-		MarkDown2: &quot;0&quot;, 
-		MarkDown3: &quot;0&quot;, 
-		MarkDown4: &quot;0&quot;, 
-		MarkDown5: &quot;0&quot;, 
-		CPI: 211.215635, 
-		Unemployment: 8.106, 
-		IsHoliday: false
-	})
+	Document document = new Document();
+	document.append(&quot;Store&quot;, 42424289);
+	document.append(&quot;Date&quot;, &quot;12/5/2022&quot;);
+	document.append(&quot;Temperature&quot;, 68.99);
+	document.append(&quot;Fuel_Price&quot;, 2.72);
+	document.append(&quot;MarkDown1&quot;, &quot;0&quot;);
+	document.append(&quot;MarkDown2&quot;, &quot;0&quot;);
+	document.append(&quot;MarkDown3&quot;, &quot;0&quot;);
+	document.append(&quot;MarkDown4&quot;, &quot;0&quot;);
+	document.append(&quot;MarkDown5&quot;, &quot;0&quot;);
+	document.append(&quot;CPI&quot;, 211.215635);
+	document.append(&quot;Unemployment&quot;, 8.106);
+	document.append(&quot;IsHoliday&quot;, false);
+	collection.insertOne(document);
  
 	// MongoClient.close() //Closes instance
-	return  &quot;Added to database and collection&quot;;
+	return  &quot;Successfuly added &quot; + document + &quot; to collection&quot;;
 	
 } catch(Exception e){
 	return &quot;Exception: &quot; + e;
@@ -193,14 +193,14 @@ try {
 	MongoCollection &lt;Document&gt; collection = db.getCollection(vars.get(&quot;collectionName&quot;));
 	collection.deleteOne(Filters.eq(&quot;IsHoliday&quot;, false))
 
-	return  &quot;Deleted.&quot; //adjust for multiple queries
+	return  &quot;Query Deleted.&quot; //adjust for multiple queries
 	
 } catch(Exception e){
 	return &quot;Exception: &quot; + e;
 }</stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Update the database" enabled="false">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Update the database" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -225,7 +225,8 @@ import static com.mongodb.client.model.Filters.*;
 import com.mongodb.client.model.UpdateOptions;
 import com.mongodb.client.model.Updates;
 import com.mongodb.client.result.UpdateResult;
-
+import org.bson.conversions.Bson;
+import com.mongodb.MongoException;
 
 try {
 	ServerAddress seed1 = new ServerAddress(&quot;127.0.0.1&quot;, 27017);
@@ -235,16 +236,17 @@ try {
 	MongoDatabase db = mongoClient.getDatabase(vars.get(&quot;databaseName&quot;));
 	MongoCollection &lt;Document&gt; collection = db.getCollection(vars.get(&quot;collectionName&quot;));
 
-	FindIterable&lt;Document&gt; docs = collection.find(eq(&quot;IsHoliday&quot;, false));
-	MongoCursor&lt;Document&gt; cursor = docs.iterator();
+	Document query = new Document();
+	query.append(&quot;IsHoliday&quot;, false);
 	
-	String res=&quot;&quot;;
-	while (cursor.hasNext()) {
-		Document doc = cursor.next();
-		res=res+doc.toString() + &quot;\n&quot;;
-	}
+	UpdateOptions options = new UpdateOptions().upsert(true);
+	Bson updates = Updates.combine( Updates.set(&quot;IsHoliday&quot;, true), Updates.set(&quot;Date&quot;, &quot;12/9/2022&quot;));
+
 	
-	return  &quot;Matches found: \n&quot; + res; 
+	UpdateResult update_result = collection.updateOne(query, updates, options);
+	//collection.updateOne({&quot;isHoliday&quot;: false}, { $set: {&quot;isHoliday&quot;: true})
+	
+	return  &quot;The update result is &quot; + update_result;
 	
 } catch(Exception e){
 	return &quot;Exception: &quot; + e;
@@ -288,7 +290,7 @@ try {
           <stringProp name="filename">resultsFromMongoWalmartTest.txt</stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="false">
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
