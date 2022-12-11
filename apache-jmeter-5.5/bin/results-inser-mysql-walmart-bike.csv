@@ -1,0 +1,301 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1670628899369,633,JDBC Request,200,OK,JDBC users 1-5,text,true,,151,0,10,10,null,629,0,621
+1670628899163,839,JDBC Request,200,OK,JDBC users 1-3,text,true,,151,0,10,10,null,835,0,827
+1670628899668,334,JDBC Request,200,OK,JDBC users 1-8,text,true,,151,0,10,10,null,331,0,322
+1670628900008,9,Insert bike sharing,200,OK,JDBC users 1-3,text,true,,9,0,10,10,null,7,0,0
+1670628900008,9,Insert bike sharing,200,OK,JDBC users 1-8,text,true,,9,0,10,10,null,8,0,0
+1670628900018,4,Insert bike sharing,200,OK,JDBC users 1-5,text,true,,9,0,10,10,null,4,0,0
+1670628899262,764,JDBC Request,200,OK,JDBC users 1-4,text,true,,151,0,10,10,null,764,0,728
+1670628899566,460,JDBC Request,200,OK,JDBC users 1-7,text,true,,151,0,10,10,null,460,0,424
+1670628899461,565,JDBC Request,200,OK,JDBC users 1-6,text,true,,151,0,10,10,null,564,0,529
+1670628899764,262,JDBC Request,200,OK,JDBC users 1-9,text,true,,151,0,10,10,null,261,0,226
+1670628899062,964,JDBC Request,200,OK,JDBC users 1-2,text,true,,151,0,10,10,null,964,0,928
+1670628899864,163,JDBC Request,200,OK,JDBC users 1-10,text,true,,151,0,10,10,null,162,0,126
+1670628898990,1036,JDBC Request,200,OK,JDBC users 1-1,text,true,,151,0,10,10,null,1036,0,1000
+1670628900044,4,Insert bike sharing,200,OK,JDBC users 1-6,text,true,,9,0,10,10,null,4,0,0
+1670628900043,5,Insert bike sharing,200,OK,JDBC users 1-10,text,true,,9,0,10,10,null,5,0,0
+1670628900045,5,Insert bike sharing,200,OK,JDBC users 1-9,text,true,,9,0,10,10,null,5,0,0
+1670628900043,6,Insert bike sharing,200,OK,JDBC users 1-7,text,true,,9,0,10,10,null,6,0,0
+1670628900043,6,Insert bike sharing,200,OK,JDBC users 1-2,text,true,,9,0,10,10,null,6,0,0
+1670628900045,12,Insert bike sharing,200,OK,JDBC users 1-1,text,true,,9,0,10,10,null,12,0,0
+1670628900049,13,Debug Sampler,200,OK,JDBC users 1-8,text,true,,704,0,10,10,null,0,0,0
+1670628900051,11,Debug Sampler,200,OK,JDBC users 1-10,text,true,,705,0,10,10,null,0,0,0
+1670628900051,11,Debug Sampler,200,OK,JDBC users 1-9,text,true,,704,0,10,10,null,0,0,0
+1670628900048,14,Debug Sampler,200,OK,JDBC users 1-3,text,true,,705,0,10,10,null,0,0,0
+1670628900051,11,Debug Sampler,200,OK,JDBC users 1-6,text,true,,705,0,10,10,null,0,0,0
+1670628900063,4,JDBC Request,200,OK,JDBC users 1-6,text,true,,151,0,10,10,null,3,0,0
+1670628900063,4,JDBC Request,200,OK,JDBC users 1-9,text,true,,151,0,10,10,null,3,0,1
+1670628900064,3,JDBC Request,200,OK,JDBC users 1-3,text,true,,151,0,10,10,null,2,0,0
+1670628900044,12,Insert bike sharing,200,OK,JDBC users 1-4,text,true,,9,0,10,10,null,12,0,0
+1670628900063,4,JDBC Request,200,OK,JDBC users 1-10,text,true,,151,0,10,10,null,3,0,1
+1670628900063,4,JDBC Request,200,OK,JDBC users 1-8,text,true,,151,0,10,10,null,3,0,0
+1670628900070,2,Insert bike sharing,200,OK,JDBC users 1-3,text,true,,9,0,10,10,null,2,0,0
+1670628900070,2,Insert bike sharing,200,OK,JDBC users 1-9,text,true,,9,0,10,10,null,2,0,0
+1670628900070,6,Insert bike sharing,200,OK,JDBC users 1-6,text,true,,9,0,10,10,null,6,0,2
+1670628900074,3,Debug Sampler,200,OK,JDBC users 1-3,text,true,,705,0,10,10,null,0,0,0
+1670628900061,16,Debug Sampler,200,OK,JDBC users 1-5,text,true,,705,0,10,10,null,0,0,0
+1670628900073,4,Debug Sampler,200,OK,JDBC users 1-4,text,true,,705,0,10,10,null,0,0,0
+1670628900051,25,Debug Sampler,200,OK,JDBC users 1-7,text,true,,705,0,10,10,null,0,0,0
+1670628900074,3,Insert bike sharing,200,OK,JDBC users 1-8,text,true,,9,0,10,10,null,3,0,0
+1670628900051,27,Debug Sampler,200,OK,JDBC users 1-2,text,true,,705,0,10,10,null,0,0,0
+1670628900074,6,Insert bike sharing,200,OK,JDBC users 1-10,text,true,,9,0,10,10,null,6,0,0
+1670628900075,16,Debug Sampler,200,OK,JDBC users 1-9,text,true,,703,0,10,10,null,0,0,0
+1670628900062,29,Debug Sampler,200,OK,JDBC users 1-1,text,true,,705,0,10,10,null,0,0,0
+1670628900081,19,Debug Sampler,200,OK,JDBC users 1-10,text,true,,705,0,10,10,null,0,0,0
+1670628900079,21,Debug Sampler,200,OK,JDBC users 1-8,text,true,,704,0,10,10,null,0,0,0
+1670628900080,21,Debug Sampler,200,OK,JDBC users 1-6,text,true,,705,0,10,10,null,0,0,0
+1670628900080,22,JDBC Request,200,OK,JDBC users 1-3,text,true,,151,0,10,10,null,19,0,0
+1670628900080,29,JDBC Request,200,OK,JDBC users 1-2,text,true,,151,0,10,10,null,19,0,0
+1670628900079,30,JDBC Request,200,OK,JDBC users 1-7,text,true,,151,0,10,10,null,20,0,0
+1670628900079,37,JDBC Request,200,OK,JDBC users 1-4,text,true,,151,0,10,10,null,34,0,0
+1670628900079,33,JDBC Request,200,OK,JDBC users 1-5,text,true,,151,0,10,10,null,20,0,0
+1670628900116,5,Insert bike sharing,200,OK,JDBC users 1-2,text,true,,9,0,10,10,null,4,0,1
+1670628900116,6,Insert bike sharing,200,OK,JDBC users 1-7,text,true,,9,0,10,10,null,6,0,0
+1670628900114,9,JDBC Request,200,OK,JDBC users 1-6,text,true,,151,0,10,10,null,6,0,0
+1670628900114,10,JDBC Request,200,OK,JDBC users 1-8,text,true,,151,0,10,10,null,8,0,0
+1670628900114,9,Insert bike sharing,200,OK,JDBC users 1-3,text,true,,9,0,10,10,null,7,0,0
+1670628900124,3,Insert bike sharing,200,OK,JDBC users 1-5,text,true,,9,0,10,10,null,3,0,0
+1670628900124,3,Insert bike sharing,200,OK,JDBC users 1-4,text,true,,9,0,10,10,null,3,0,0
+1670628900117,6,JDBC Request,200,OK,JDBC users 1-1,text,true,,151,0,10,10,null,3,0,0
+1670628900114,11,JDBC Request,200,OK,JDBC users 1-10,text,true,,151,0,10,10,null,9,0,0
+1670628900128,1,Insert bike sharing,200,OK,JDBC users 1-10,text,true,,9,0,10,10,null,1,0,0
+1670628900128,1,Insert bike sharing,200,OK,JDBC users 1-1,text,true,,9,0,10,10,null,1,0,0
+1670628900127,3,Insert bike sharing,200,OK,JDBC users 1-8,text,true,,9,0,10,10,null,3,0,0
+1670628900126,5,JDBC Request,200,OK,JDBC users 1-9,text,true,,151,0,10,10,null,5,0,0
+1670628900127,4,Insert bike sharing,200,OK,JDBC users 1-6,text,true,,9,0,10,10,null,4,0,0
+1670628900133,5,Debug Sampler,200,OK,JDBC users 1-2,text,true,,705,0,10,10,null,0,0,0
+1670628900133,5,Debug Sampler,200,OK,JDBC users 1-7,text,true,,705,0,10,10,null,0,0,0
+1670628900133,6,Debug Sampler,200,OK,JDBC users 1-1,text,true,,705,0,10,10,null,0,0,0
+1670628900133,6,Debug Sampler,200,OK,JDBC users 1-10,text,true,,705,0,10,10,null,0,0,0
+1670628900133,6,Debug Sampler,200,OK,JDBC users 1-3,text,true,,705,0,10,10,null,0,0,0
+1670628900133,9,Debug Sampler,200,OK,JDBC users 1-4,text,true,,705,0,10,10,null,0,0,0
+1670628900140,2,Debug Sampler,200,OK,JDBC users 1-6,text,true,,705,0,10,10,null,0,0,0
+1670628900137,7,Insert bike sharing,200,OK,JDBC users 1-9,text,true,,9,0,10,10,null,7,0,0
+1670628900140,7,JDBC Request,200,OK,JDBC users 1-3,text,true,,151,0,10,10,null,6,0,0
+1670628900140,7,JDBC Request,200,OK,JDBC users 1-10,text,true,,151,0,10,10,null,6,0,0
+1670628900141,6,JDBC Request,200,OK,JDBC users 1-1,text,true,,151,0,10,10,null,6,0,0
+1670628900141,8,JDBC Request,200,OK,JDBC users 1-7,text,true,,151,0,10,10,null,7,0,0
+1670628900133,18,Debug Sampler,200,OK,JDBC users 1-8,text,true,,704,0,10,10,null,0,0,0
+1670628900133,18,Debug Sampler,200,OK,JDBC users 1-5,text,true,,705,0,10,10,null,0,0,0
+1670628900159,4,Insert bike sharing,200,OK,JDBC users 1-10,text,true,,9,0,10,10,null,4,0,0
+1670628900158,2,Insert bike sharing,200,OK,JDBC users 1-3,text,true,,9,0,10,10,null,2,0,0
+1670628900159,4,Insert bike sharing,200,OK,JDBC users 1-7,text,true,,9,0,10,10,null,4,0,0
+1670628900159,2,Insert bike sharing,200,OK,JDBC users 1-1,text,true,,9,0,10,10,null,2,0,0
+1670628900157,7,Debug Sampler,200,OK,JDBC users 1-9,text,true,,704,0,10,10,null,0,0,0
+1670628900158,14,JDBC Request,200,OK,JDBC users 1-6,text,true,,151,0,10,10,null,6,0,0
+1670628900165,4,Debug Sampler,200,OK,JDBC users 1-10,text,true,,705,0,10,10,null,0,0,0
+1670628900164,4,Debug Sampler,200,OK,JDBC users 1-7,text,true,,705,0,10,10,null,0,0,0
+1670628900157,15,JDBC Request,200,OK,JDBC users 1-2,text,true,,151,0,10,10,null,8,0,0
+1670628900158,14,JDBC Request,200,OK,JDBC users 1-4,text,true,,151,0,10,10,null,6,0,0
+1670628900165,4,Debug Sampler,200,OK,JDBC users 1-1,text,true,,704,0,10,10,null,0,0,0
+1670628900164,5,Debug Sampler,200,OK,JDBC users 1-3,text,true,,705,0,10,10,null,0,0,0
+1670628900159,16,JDBC Request,200,OK,JDBC users 1-5,text,true,,151,0,10,10,null,5,0,0
+1670628900174,5,Insert bike sharing,200,OK,JDBC users 1-2,text,true,,9,0,10,10,null,4,0,0
+1670628900174,8,Insert bike sharing,200,OK,JDBC users 1-6,text,true,,9,0,10,10,null,5,0,0
+1670628900179,3,Insert bike sharing,200,OK,JDBC users 1-5,text,true,,9,0,10,10,null,1,0,0
+1670628900157,17,JDBC Request,200,OK,JDBC users 1-8,text,true,,151,0,10,10,null,7,0,0
+1670628900174,4,Insert bike sharing,200,OK,JDBC users 1-4,text,true,,9,0,10,10,null,4,0,0
+1670628900175,13,JDBC Request,200,OK,JDBC users 1-1,text,true,,151,0,10,10,null,6,0,0
+1670628900175,13,JDBC Request,200,OK,JDBC users 1-3,text,true,,151,0,10,10,null,6,0,0
+1670628900174,14,JDBC Request,200,OK,JDBC users 1-10,text,true,,151,0,10,10,null,7,0,0
+1670628900174,15,JDBC Request,200,OK,JDBC users 1-7,text,true,,151,0,10,10,null,7,0,0
+1670628900187,1,Debug Sampler,200,OK,JDBC users 1-6,text,true,,705,0,10,10,null,0,0,0
+1670628900186,2,Debug Sampler,200,OK,JDBC users 1-5,text,true,,705,0,10,10,null,0,0,0
+1670628900186,2,Insert bike sharing,200,OK,JDBC users 1-8,text,true,,9,0,10,10,null,2,0,0
+1670628900186,1,Debug Sampler,200,OK,JDBC users 1-4,text,true,,705,0,10,10,null,0,0,0
+1670628900186,2,Debug Sampler,200,OK,JDBC users 1-2,text,true,,705,0,10,10,null,0,0,0
+1670628900167,21,JDBC Request,200,OK,JDBC users 1-9,text,true,,151,0,10,10,null,14,0,0
+1670628900194,2,Insert bike sharing,200,OK,JDBC users 1-10,text,true,,9,0,10,10,null,2,0,1
+1670628900193,3,Insert bike sharing,200,OK,JDBC users 1-1,text,true,,9,0,10,10,null,3,0,2
+1670628900193,2,Insert bike sharing,200,OK,JDBC users 1-3,text,true,,9,0,10,10,null,2,0,1
+1670628900193,1,Debug Sampler,200,OK,JDBC users 1-8,text,true,,704,0,10,10,null,0,0,0
+1670628900194,2,Insert bike sharing,200,OK,JDBC users 1-9,text,true,,9,0,10,10,null,2,0,0
+1670628900194,1,Insert bike sharing,200,OK,JDBC users 1-7,text,true,,9,0,10,10,null,1,0,0
+1670628900198,1,Debug Sampler,200,OK,JDBC users 1-10,text,true,,705,0,10,10,null,0,0,0
+1670628900199,0,Debug Sampler,200,OK,JDBC users 1-9,text,true,,704,0,10,10,null,0,0,0
+1670628900199,2,Debug Sampler,200,OK,JDBC users 1-3,text,true,,705,0,10,10,null,0,0,0
+1670628900199,0,Debug Sampler,200,OK,JDBC users 1-1,text,true,,705,0,10,10,null,0,0,0
+1670628900194,9,JDBC Request,200,OK,JDBC users 1-5,text,true,,151,0,10,10,null,6,0,1
+1670628900194,9,JDBC Request,200,OK,JDBC users 1-6,text,true,,151,0,10,10,null,5,0,2
+1670628900202,0,Debug Sampler,200,OK,JDBC users 1-7,text,true,,705,0,10,10,null,0,0,0
+1670628900198,6,JDBC Request,200,OK,JDBC users 1-8,text,true,,151,0,10,10,null,4,0,1
+1670628900194,10,JDBC Request,200,OK,JDBC users 1-2,text,true,,151,0,10,10,null,6,0,0
+1670628900194,9,JDBC Request,200,OK,JDBC users 1-4,text,true,,151,0,10,10,null,5,0,2
+1670628900205,2,Insert bike sharing,200,OK,JDBC users 1-6,text,true,,9,0,10,10,null,2,0,0
+1670628900206,2,Insert bike sharing,200,OK,JDBC users 1-4,text,true,,9,0,10,10,null,2,0,1
+1670628900203,6,Insert bike sharing,200,OK,JDBC users 1-5,text,true,,9,0,10,10,null,6,0,0
+1670628900207,3,Debug Sampler,200,OK,JDBC users 1-6,text,true,,705,0,10,10,null,0,0,0
+1670628900205,5,Insert bike sharing,200,OK,JDBC users 1-2,text,true,,9,0,10,10,null,5,0,0
+1670628900204,7,JDBC Request,200,OK,JDBC users 1-1,text,true,,151,0,10,10,null,4,0,0
+1670628900202,9,JDBC Request,200,OK,JDBC users 1-10,text,true,,151,0,10,10,null,7,0,0
+1670628900203,8,JDBC Request,200,OK,JDBC users 1-3,text,true,,151,0,10,10,null,4,0,0
+1670628900208,3,Debug Sampler,200,OK,JDBC users 1-4,text,true,,705,0,10,10,null,0,0,0
+1670628900205,3,Insert bike sharing,200,OK,JDBC users 1-8,text,true,,9,0,10,10,null,3,0,0
+1670628900205,6,JDBC Request,200,OK,JDBC users 1-7,text,true,,151,0,10,10,null,4,0,0
+1670628900203,9,JDBC Request,200,OK,JDBC users 1-9,text,true,,151,0,10,10,null,6,0,0
+1670628900217,0,Debug Sampler,200,OK,JDBC users 1-8,text,true,,704,0,10,10,null,0,0,0
+1670628900217,1,Debug Sampler,200,OK,JDBC users 1-5,text,true,,705,0,10,10,null,0,0,0
+1670628900217,1,Debug Sampler,200,OK,JDBC users 1-2,text,true,,705,0,10,10,null,0,0,0
+1670628900218,3,Insert bike sharing,200,OK,JDBC users 1-3,text,true,,9,0,10,10,null,3,0,0
+1670628900218,3,Insert bike sharing,200,OK,JDBC users 1-10,text,true,,9,0,10,10,null,2,0,0
+1670628900218,6,Insert bike sharing,200,OK,JDBC users 1-1,text,true,,9,0,10,10,null,4,0,0
+1670628900224,1,Debug Sampler,200,OK,JDBC users 1-10,text,true,,705,0,10,10,null,0,0,0
+1670628900224,1,Debug Sampler,200,OK,JDBC users 1-3,text,true,,705,0,10,10,null,0,0,0
+1670628900218,7,Insert bike sharing,200,OK,JDBC users 1-7,text,true,,9,0,10,10,null,3,0,0
+1670628900218,5,Insert bike sharing,200,OK,JDBC users 1-9,text,true,,9,0,10,10,null,4,0,0
+1670628900227,1,Debug Sampler,200,OK,JDBC users 1-9,text,true,,704,0,10,10,null,0,0,0
+1670628900230,0,Debug Sampler,200,OK,JDBC users 1-7,text,true,,705,0,10,10,null,0,0,0
+1670628900229,1,Debug Sampler,200,OK,JDBC users 1-1,text,true,,705,0,10,10,null,0,0,0
+1670628900220,15,JDBC Request,200,OK,JDBC users 1-2,text,true,,151,0,10,10,null,10,0,2
+1670628900228,9,JDBC Request,200,OK,JDBC users 1-3,text,true,,151,0,10,10,null,4,0,0
+1670628900230,8,JDBC Request,200,OK,JDBC users 1-1,text,true,,151,0,10,10,null,7,0,0
+1670628900220,15,JDBC Request,200,OK,JDBC users 1-5,text,true,,151,0,10,10,null,4,0,1
+1670628900228,8,JDBC Request,200,OK,JDBC users 1-10,text,true,,151,0,10,10,null,5,0,0
+1670628900230,7,JDBC Request,200,OK,JDBC users 1-9,text,true,,151,0,10,10,null,3,0,0
+1670628900231,6,JDBC Request,200,OK,JDBC users 1-7,text,true,,151,0,10,10,null,6,0,0
+1670628900218,18,JDBC Request,200,OK,JDBC users 1-4,text,true,,151,0,10,10,null,4,0,0
+1670628900218,18,JDBC Request,200,OK,JDBC users 1-6,text,true,,151,0,10,10,null,4,0,0
+1670628900219,18,JDBC Request,200,OK,JDBC users 1-8,text,true,,151,0,10,10,null,3,0,2
+1670628900253,5,Insert bike sharing,200,OK,JDBC users 1-6,text,true,,9,0,10,10,null,5,0,0
+1670628900255,4,Insert bike sharing,200,OK,JDBC users 1-8,text,true,,9,0,10,10,null,4,0,0
+1670628900253,7,Insert bike sharing,200,OK,JDBC users 1-1,text,true,,9,0,10,10,null,7,0,0
+1670628900254,5,Insert bike sharing,200,OK,JDBC users 1-4,text,true,,9,0,10,10,null,4,0,0
+1670628900253,5,Insert bike sharing,200,OK,JDBC users 1-7,text,true,,9,0,10,10,null,5,0,0
+1670628900253,7,Insert bike sharing,200,OK,JDBC users 1-10,text,true,,9,0,10,10,null,6,0,0
+1670628900254,6,Insert bike sharing,200,OK,JDBC users 1-9,text,true,,9,0,10,10,null,6,0,0
+1670628900254,7,Insert bike sharing,200,OK,JDBC users 1-3,text,true,,9,0,10,10,null,6,0,0
+1670628900254,11,Insert bike sharing,200,OK,JDBC users 1-5,text,true,,9,0,10,10,null,7,0,0
+1670628900254,11,Insert bike sharing,200,OK,JDBC users 1-2,text,true,,9,0,10,10,null,7,0,0
+1670628900263,6,Debug Sampler,200,OK,JDBC users 1-4,text,true,,705,0,10,10,null,0,0,0
+1670628900265,7,Debug Sampler,200,OK,JDBC users 1-5,text,true,,705,0,10,10,null,0,0,0
+1670628900263,6,Debug Sampler,200,OK,JDBC users 1-9,text,true,,704,0,10,10,null,0,0,0
+1670628900263,9,Debug Sampler,200,OK,JDBC users 1-1,text,true,,705,0,10,10,null,0,0,0
+1670628900264,5,Debug Sampler,200,OK,JDBC users 1-7,text,true,,705,0,10,10,null,0,0,0
+1670628900266,4,Debug Sampler,200,OK,JDBC users 1-2,text,true,,705,0,10,10,null,0,0,0
+1670628900266,9,Debug Sampler,200,OK,JDBC users 1-3,text,true,,704,0,10,10,null,0,0,0
+1670628900264,8,Debug Sampler,200,OK,JDBC users 1-8,text,true,,704,0,10,10,null,0,0,0
+1670628900264,10,Debug Sampler,200,OK,JDBC users 1-10,text,true,,705,0,10,10,null,0,0,0
+1670628900263,11,Debug Sampler,200,OK,JDBC users 1-6,text,true,,705,0,10,10,null,0,0,0
+1670628900273,22,JDBC Request,200,OK,JDBC users 1-2,text,true,,151,0,10,10,null,19,0,1
+1670628900285,11,JDBC Request,200,OK,JDBC users 1-6,text,true,,151,0,10,10,null,5,0,0
+1670628900274,27,JDBC Request,200,OK,JDBC users 1-5,text,true,,151,0,10,10,null,16,0,0
+1670628900283,18,JDBC Request,200,OK,JDBC users 1-8,text,true,,151,0,10,10,null,6,0,0
+1670628900273,28,JDBC Request,200,OK,JDBC users 1-7,text,true,,151,0,10,10,null,17,0,0
+1670628900273,29,JDBC Request,200,OK,JDBC users 1-1,text,true,,151,0,10,10,null,17,0,0
+1670628900297,5,Insert bike sharing,200,OK,JDBC users 1-2,text,true,,9,0,10,10,null,5,0,0
+1670628900298,4,Insert bike sharing,200,OK,JDBC users 1-6,text,true,,9,0,10,10,null,2,0,0
+1670628900275,27,JDBC Request,200,OK,JDBC users 1-9,text,true,,151,0,10,10,null,15,0,0
+1670628900275,28,JDBC Request,200,OK,JDBC users 1-4,text,true,,151,0,10,10,null,15,0,0
+1670628900302,2,Debug Sampler,200,OK,JDBC users 1-2,text,true,,705,0,10,10,null,0,0,0
+1670628900304,0,Debug Sampler,200,OK,JDBC users 1-6,text,true,,705,0,10,10,null,0,0,0
+1670628900302,6,Insert bike sharing,200,OK,JDBC users 1-7,text,true,,9,0,10,10,null,5,0,0
+1670628900301,8,Insert bike sharing,200,OK,JDBC users 1-8,text,true,,9,0,10,10,null,6,0,1
+1670628900283,25,JDBC Request,200,OK,JDBC users 1-10,text,true,,151,0,10,10,null,18,0,3
+1670628900301,7,Insert bike sharing,200,OK,JDBC users 1-5,text,true,,9,0,10,10,null,6,0,1
+1670628900304,7,Insert bike sharing,200,OK,JDBC users 1-9,text,true,,9,0,10,10,null,7,0,5
+1670628900304,7,Insert bike sharing,200,OK,JDBC users 1-4,text,true,,9,0,10,10,null,7,0,5
+1670628900335,2,Debug Sampler,200,OK,JDBC users 1-9,text,true,,704,0,10,10,null,0,0,0
+1670628900329,3,Debug Sampler,200,OK,JDBC users 1-8,text,true,,704,0,10,10,null,0,0,0
+1670628900283,26,JDBC Request,200,OK,JDBC users 1-3,text,true,,151,0,10,10,null,6,0,0
+1670628900336,2,Debug Sampler,200,OK,JDBC users 1-4,text,true,,705,0,10,10,null,0,0,0
+1670628900302,7,Insert bike sharing,200,OK,JDBC users 1-1,text,true,,9,0,10,10,null,5,0,0
+1670628900316,4,JDBC Request,200,OK,JDBC users 1-6,text,true,,151,0,10,10,null,3,0,0
+1670628900316,5,JDBC Request,200,OK,JDBC users 1-2,text,true,,151,0,10,10,null,2,0,0
+1670628900336,2,Debug Sampler,200,OK,JDBC users 1-5,text,true,,705,0,10,10,null,0,0,0
+1670628900329,2,Debug Sampler,200,OK,JDBC users 1-7,text,true,,705,0,10,10,null,0,0,0
+1670628900332,3,Insert bike sharing,200,OK,JDBC users 1-10,text,true,,9,0,10,10,null,3,0,1
+1670628900363,0,Debug Sampler,200,OK,JDBC users 1-1,text,true,,705,0,10,10,null,0,0,0
+1670628900363,1,JDBC Request,200,OK,JDBC users 1-4,text,true,,151,0,10,10,null,1,0,0
+1670628900364,0,Debug Sampler,200,OK,JDBC users 1-10,text,true,,705,0,10,10,null,0,0,0
+1670628900363,2,Insert bike sharing,200,OK,JDBC users 1-3,text,true,,9,0,10,10,null,2,0,0
+1670628900364,1,JDBC Request,200,OK,JDBC users 1-7,text,true,,151,0,10,10,null,1,0,0
+1670628900365,0,Debug Sampler,200,OK,JDBC users 1-3,text,true,,705,0,10,10,null,0,0,0
+1670628900363,2,JDBC Request,200,OK,JDBC users 1-5,text,true,,151,0,10,10,null,2,0,0
+1670628900363,3,JDBC Request,200,OK,JDBC users 1-9,text,true,,151,0,10,10,null,2,0,0
+1670628900366,2,Insert bike sharing,200,OK,JDBC users 1-5,text,true,,9,0,10,10,null,2,0,0
+1670628900363,2,Insert bike sharing,200,OK,JDBC users 1-6,text,true,,9,0,10,10,null,1,0,0
+1670628900364,4,Insert bike sharing,200,OK,JDBC users 1-4,text,true,,9,0,10,10,null,4,0,0
+1670628900363,4,JDBC Request,200,OK,JDBC users 1-8,text,true,,151,0,10,10,null,2,0,0
+1670628900365,3,Insert bike sharing,200,OK,JDBC users 1-7,text,true,,9,0,10,10,null,3,0,0
+1670628900369,1,Debug Sampler,200,OK,JDBC users 1-4,text,true,,704,0,10,10,null,0,0,0
+1670628900370,0,Debug Sampler,200,OK,JDBC users 1-7,text,true,,705,0,10,10,null,0,0,0
+1670628900369,2,Debug Sampler,200,OK,JDBC users 1-6,text,true,,705,0,10,10,null,0,0,0
+1670628900363,5,Insert bike sharing,200,OK,JDBC users 1-2,text,true,,9,0,10,10,null,5,0,0
+1670628900369,1,Debug Sampler,200,OK,JDBC users 1-5,text,true,,705,0,10,10,null,0,0,0
+1670628900365,7,JDBC Request,200,OK,JDBC users 1-1,text,true,,151,0,10,10,null,2,0,0
+1670628900365,8,JDBC Request,200,OK,JDBC users 1-3,text,true,,151,0,10,10,null,2,0,0
+1670628900365,7,JDBC Request,200,OK,JDBC users 1-10,text,true,,151,0,10,10,null,3,0,0
+1670628900377,1,Debug Sampler,200,OK,JDBC users 1-2,text,true,,705,0,10,10,null,0,0,0
+1670628900366,11,Insert bike sharing,200,OK,JDBC users 1-9,text,true,,9,0,10,10,null,11,0,0
+1670628900380,0,Debug Sampler,200,OK,JDBC users 1-9,text,true,,704,0,10,10,null,0,0,0
+1670628900376,18,Insert bike sharing,200,OK,JDBC users 1-8,text,true,,9,0,10,10,null,17,0,0
+1670628900378,22,Insert bike sharing,200,OK,JDBC users 1-10,text,true,,9,0,10,10,null,22,0,0
+1670628900378,23,Insert bike sharing,200,OK,JDBC users 1-1,text,true,,9,0,10,10,null,23,0,0
+1670628900378,22,Insert bike sharing,200,OK,JDBC users 1-3,text,true,,9,0,10,10,null,22,0,0
+1670628900404,0,Debug Sampler,200,OK,JDBC users 1-8,text,true,,704,0,10,10,null,0,0,0
+1670628900378,27,JDBC Request,200,OK,JDBC users 1-5,text,true,,151,0,10,10,null,26,0,0
+1670628900404,1,Debug Sampler,200,OK,JDBC users 1-10,text,true,,705,0,10,10,null,0,0,0
+1670628900381,24,JDBC Request,200,OK,JDBC users 1-9,text,true,,151,0,10,10,null,22,0,0
+1670628900380,24,JDBC Request,200,OK,JDBC users 1-2,text,true,,151,0,10,10,null,24,0,0
+1670628900404,0,Debug Sampler,200,OK,JDBC users 1-3,text,true,,705,0,10,10,null,0,0,0
+1670628900377,28,JDBC Request,200,OK,JDBC users 1-4,text,true,,151,0,10,10,null,27,0,1
+1670628900405,0,Debug Sampler,200,OK,JDBC users 1-1,text,true,,705,0,10,10,null,0,0,0
+1670628900377,28,JDBC Request,200,OK,JDBC users 1-7,text,true,,151,0,10,10,null,27,0,1
+1670628900377,34,JDBC Request,200,OK,JDBC users 1-6,text,true,,151,0,10,10,null,34,0,1
+1670628900406,10,Insert bike sharing,200,OK,JDBC users 1-7,text,true,,9,0,10,10,null,9,0,0
+1670628900418,0,Debug Sampler,200,OK,JDBC users 1-7,text,true,,705,0,10,10,null,0,0,0
+1670628900405,13,Insert bike sharing,200,OK,JDBC users 1-5,text,true,,9,0,10,10,null,13,0,0
+1670628900418,1,Debug Sampler,200,OK,JDBC users 1-5,text,true,,704,0,10,10,null,0,0,0
+1670628900405,14,Insert bike sharing,200,OK,JDBC users 1-9,text,true,,9,0,10,10,null,14,0,0
+1670628900405,14,Insert bike sharing,200,OK,JDBC users 1-2,text,true,,9,0,10,10,null,14,0,0
+1670628900405,14,Insert bike sharing,200,OK,JDBC users 1-4,text,true,,9,0,10,10,null,14,0,0
+1670628900423,0,Debug Sampler,200,OK,JDBC users 1-2,text,true,,705,0,10,10,null,0,0,0
+1670628900423,1,Debug Sampler,200,OK,JDBC users 1-9,text,true,,704,0,10,10,null,0,0,0
+1670628900405,19,JDBC Request,200,OK,JDBC users 1-1,text,true,,151,0,10,10,null,17,0,0
+1670628900423,4,JDBC Request,200,OK,JDBC users 1-5,text,true,,151,0,10,10,null,2,0,0
+1670628900406,21,JDBC Request,200,OK,JDBC users 1-8,text,true,,151,0,10,10,null,15,0,0
+1670628900405,20,JDBC Request,200,OK,JDBC users 1-10,text,true,,151,0,10,10,null,17,0,0
+1670628900423,1,Debug Sampler,200,OK,JDBC users 1-4,text,true,,705,0,10,10,null,0,0,0
+1670628900415,10,Insert bike sharing,200,OK,JDBC users 1-6,text,true,,9,0,10,10,null,10,0,0
+1670628900427,1,Insert bike sharing,200,OK,JDBC users 1-1,text,true,,9,0,10,10,null,1,0,0
+1670628900428,1,Insert bike sharing,200,OK,JDBC users 1-5,text,true,,9,0,10,10,null,1,0,0
+1670628900426,4,JDBC Request,200,OK,JDBC users 1-2,text,true,,151,0,10,10,null,2,0,0
+1670628900418,9,JDBC Request,200,OK,JDBC users 1-7,text,true,,151,0,10,10,null,7,0,0
+1670628900429,0,Debug Sampler,200,OK,JDBC users 1-1,text,true,,705,0,10,10,null,0,0,0
+1670628900428,1,Insert bike sharing,200,OK,JDBC users 1-10,text,true,,9,0,10,10,null,1,0,0
+1670628900429,0,Debug Sampler,200,OK,JDBC users 1-6,text,true,,705,0,10,10,null,0,0,0
+1670628900428,3,Insert bike sharing,200,OK,JDBC users 1-8,text,true,,9,0,10,10,null,3,0,0
+1670628900426,4,JDBC Request,200,OK,JDBC users 1-9,text,true,,151,0,10,10,null,2,0,0
+1670628900428,2,JDBC Request,200,OK,JDBC users 1-4,text,true,,151,0,10,10,null,0,0,0
+1670628900405,20,JDBC Request,200,OK,JDBC users 1-3,text,true,,151,0,10,10,null,16,0,0
+1670628900436,0,Debug Sampler,200,OK,JDBC users 1-8,text,true,,704,0,10,10,null,0,0,0
+1670628900435,1,Debug Sampler,200,OK,JDBC users 1-10,text,true,,705,0,10,10,null,0,0,0
+1670628900435,0,Debug Sampler,200,OK,JDBC users 1-5,text,true,,705,0,10,10,null,0,0,0
+1670628900435,15,Insert bike sharing,200,OK,JDBC users 1-9,text,true,,9,0,9,9,null,14,0,0
+1670628900434,16,Insert bike sharing,200,OK,JDBC users 1-7,text,true,,9,0,9,9,null,15,0,0
+1670628900434,16,Insert bike sharing,200,OK,JDBC users 1-4,text,true,,9,0,9,9,null,15,0,0
+1670628900452,0,Debug Sampler,200,OK,JDBC users 1-4,text,true,,705,0,9,9,null,0,0,0
+1670628900451,0,Debug Sampler,200,OK,JDBC users 1-9,text,true,,704,0,9,9,null,0,0,0
+1670628900434,19,JDBC Request,200,OK,JDBC users 1-6,text,true,,151,0,9,9,null,15,0,0
+1670628900451,1,Debug Sampler,200,OK,JDBC users 1-7,text,true,,705,0,9,9,null,0,0,0
+1670628900435,20,JDBC Request,200,OK,JDBC users 1-1,text,true,,151,0,9,9,null,13,0,0
+1670628900455,9,Insert bike sharing,200,OK,JDBC users 1-6,text,true,,9,0,7,7,null,6,0,0
+1670628900435,30,Insert bike sharing,200,OK,JDBC users 1-2,text,true,,9,0,7,7,null,26,0,1
+1670628900434,31,Insert bike sharing,200,OK,JDBC users 1-3,text,true,,9,0,7,7,null,28,0,0
+1670628900465,1,Debug Sampler,200,OK,JDBC users 1-6,text,true,,705,0,7,7,null,0,0,0
+1670628900459,7,Insert bike sharing,200,OK,JDBC users 1-1,text,true,,9,0,7,7,null,2,0,1
+1670628900465,1,Debug Sampler,200,OK,JDBC users 1-3,text,true,,705,0,7,7,null,0,0,0
+1670628900466,0,Debug Sampler,200,OK,JDBC users 1-2,text,true,,705,0,6,6,null,0,0,0
+1670628900466,0,Debug Sampler,200,OK,JDBC users 1-1,text,true,,705,0,5,5,null,0,0,0
+1670628900443,26,JDBC Request,200,OK,JDBC users 1-5,text,true,,151,0,4,4,null,19,0,2
+1670628900452,17,JDBC Request,200,OK,JDBC users 1-4,text,true,,151,0,4,4,null,10,0,0
+1670628900444,25,JDBC Request,200,OK,JDBC users 1-8,text,true,,151,0,4,4,null,18,0,2
+1670628900466,5,JDBC Request,200,OK,JDBC users 1-2,text,true,,151,0,4,4,null,5,0,3
+1670628900471,1,Insert bike sharing,200,OK,JDBC users 1-4,text,true,,9,0,4,4,null,1,0,0
+1670628900471,1,Insert bike sharing,200,OK,JDBC users 1-5,text,true,,9,0,4,4,null,1,0,0
+1670628900471,2,Insert bike sharing,200,OK,JDBC users 1-8,text,true,,9,0,4,4,null,2,0,0
+1670628900474,0,Debug Sampler,200,OK,JDBC users 1-4,text,true,,705,0,4,4,null,0,0,0
+1670628900474,0,Debug Sampler,200,OK,JDBC users 1-5,text,true,,705,0,4,4,null,0,0,0
+1670628900474,0,Debug Sampler,200,OK,JDBC users 1-8,text,true,,704,0,4,4,null,0,0,0
+1670628900474,4,Insert bike sharing,200,OK,JDBC users 1-2,text,true,,9,0,4,4,null,3,0,0
+1670628900478,0,Debug Sampler,200,OK,JDBC users 1-2,text,true,,705,0,4,4,null,0,0,0
