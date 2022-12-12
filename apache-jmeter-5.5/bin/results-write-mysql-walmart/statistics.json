@@ -1,0 +1,50 @@
+{
+  "Debug Sampler" : {
+    "transaction" : "Debug Sampler",
+    "sampleCount" : 100,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 4.050000000000001,
+    "medianResTime" : 2.0,
+    "minResTime" : 0.0,
+    "maxResTime" : 30.0,
+    "pct1ResTime" : 9.900000000000006,
+    "pct2ResTime" : 11.0,
+    "pct3ResTime" : 29.93999999999997,
+    "throughput" : 458.7155963302753,
+    "receivedKBytesPerSec" : 250.48828125,
+    "sentKBytesPerSec" : 0.0
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 200,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 36.295,
+    "medianResTime" : 3.0,
+    "minResTime" : 0.0,
+    "maxResTime" : 1063.0,
+    "pct1ResTime" : 14.0,
+    "pct2ResTime" : 187.6999999999981,
+    "pct3ResTime" : 985.9900000000009,
+    "throughput" : 152.3229246001523,
+    "receivedKBytesPerSec" : 42.25845511233816,
+    "sentKBytesPerSec" : 0.0
+  },
+  "Insert walmart store" : {
+    "transaction" : "Insert walmart store",
+    "sampleCount" : 100,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 68.53999999999998,
+    "medianResTime" : 3.0,
+    "minResTime" : 0.0,
+    "maxResTime" : 1063.0,
+    "pct1ResTime" : 178.600000000001,
+    "pct2ResTime" : 689.6499999999987,
+    "pct3ResTime" : 1062.2399999999996,
+    "throughput" : 76.16146230007615,
+    "receivedKBytesPerSec" : 0.6693878522467631,
+    "sentKBytesPerSec" : 0.0
+  }
+}

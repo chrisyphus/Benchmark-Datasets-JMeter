@@ -16,10 +16,10 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
+          <stringProp name="LoopController.loops">10</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">20</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
@@ -54,11 +54,10 @@
           <stringProp name="variableName">random_store</stringProp>
         </RandomVariableConfig>
         <hashTree/>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request" enabled="true">
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="READ Request" enabled="false">
           <stringProp name="dataSource">myDatabase</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">SELECT *
-FROM walmart LIMIT 1;
+          <stringProp name="query">SELECT * FROM walmart LIMIT 1;
 </stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
@@ -78,10 +77,10 @@ FROM walmart LIMIT 1;
           <boolProp name="perThread">true</boolProp>
         </RandomVariableConfig>
         <hashTree/>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="temperature" enabled="false">
-          <stringProp name="variableName">random_temperature</stringProp>
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="random_Fuel_Price2" enabled="true">
+          <stringProp name="variableName">random_Fuel_Price2</stringProp>
           <stringProp name="outputFormat"></stringProp>
-          <stringProp name="minimumValue">1</stringProp>
+          <stringProp name="minimumValue">50</stringProp>
           <stringProp name="maximumValue">100</stringProp>
           <stringProp name="randomSeed"></stringProp>
           <boolProp name="perThread">true</boolProp>
@@ -153,7 +152,7 @@ FROM walmart LIMIT 1;
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Insert walmart store" enabled="true">
           <stringProp name="dataSource">myDatabase</stringProp>
           <stringProp name="queryType">Update Statement</stringProp>
-          <stringProp name="query">INSERT INTO walmart VALUES (&quot;${random_store}&quot;,&quot;2022-05-29&quot;,&apos;${Temperature_1}&apos;,${random_Fuel_Price},${random_markdown1},${random_markdown2},${random_markdown3},${random_markdown4},${random_markdown5},${random_cpi},${random_unemployment},&apos;TRUE&apos;)
+          <stringProp name="query">INSERT INTO walmart VALUES (&quot;${random_store}&quot;,&quot;2022-05-29&quot;,&quot;63.71&quot;,${random_Fuel_Price},${random_markdown1},${random_markdown2},${random_markdown3},${random_markdown4},${random_markdown5},${random_cpi},${random_unemployment},&apos;TRUE&apos;)
 </stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
@@ -162,6 +161,32 @@ FROM walmart LIMIT 1;
           <stringProp name="queryTimeout"></stringProp>
           <stringProp name="resultSetHandler">Store as String</stringProp>
           <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Update Request" enabled="false">
+          <stringProp name="dataSource"></stringProp>
+          <stringProp name="queryType">Update Statement</stringProp>
+          <stringProp name="query">Update walmart set Fuel_Price=${random_Fuel_Price2} WHERE Store=&quot;${random_store}&quot; and Date=&quot;2022-05-29&quot; and Temperature=&apos;${Temperature_1}&apos; and Fuel_Price=${random_Fuel_Price} LIMIT 1</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Delete Request" enabled="false">
+          <stringProp name="dataSource"></stringProp>
+          <stringProp name="queryType">Update Statement</stringProp>
+          <stringProp name="query">DELETE from walmart WHERE Store=&quot;${random_store}&quot; and Date=&quot;2022-05-29&quot; and Temperature=&apos;${Temperature_1}&apos; and Fuel_Price=${random_Fuel_Price2} LIMIT 1</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
         </JDBCSampler>
         <hashTree/>
         <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">

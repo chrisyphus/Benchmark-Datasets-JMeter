@@ -1,0 +1,34 @@
+{
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 100,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 296.90000000000003,
+    "medianResTime" : 148.0,
+    "minResTime" : 55.0,
+    "maxResTime" : 2045.0,
+    "pct1ResTime" : 1086.500000000005,
+    "pct2ResTime" : 1700.1999999999985,
+    "pct3ResTime" : 2044.2499999999995,
+    "throughput" : 28.240609997175937,
+    "receivedKBytesPerSec" : 16299.989189141486,
+    "sentKBytesPerSec" : 0.0
+  },
+  "MySQL read Request from walmart data" : {
+    "transaction" : "MySQL read Request from walmart data",
+    "sampleCount" : 100,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 296.90000000000003,
+    "medianResTime" : 148.0,
+    "minResTime" : 55.0,
+    "maxResTime" : 2045.0,
+    "pct1ResTime" : 1086.500000000005,
+    "pct2ResTime" : 1700.1999999999985,
+    "pct3ResTime" : 2044.2499999999995,
+    "throughput" : 28.240609997175937,
+    "receivedKBytesPerSec" : 16299.989189141486,
+    "sentKBytesPerSec" : 0.0
+  }
+}
