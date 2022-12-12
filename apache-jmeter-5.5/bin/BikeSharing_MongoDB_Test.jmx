@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="MongoDB_bike_sharing_Test" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="databaseName" elementType="Argument">
+            <stringProp name="Argument.name">databaseName</stringProp>
+            <stringProp name="Argument.value">bike_sharing</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="collectionName" elementType="Argument">
+            <stringProp name="Argument.name">collectionName</stringProp>
+            <stringProp name="Argument.value">bike_sharing_mongotest_collection</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="mongoPort" elementType="Argument">
+            <stringProp name="Argument.name">mongoPort</stringProp>
+            <stringProp name="Argument.value">27017</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="mongoHost" elementType="Argument">
+            <stringProp name="Argument.name">mongoHost</stringProp>
+            <stringProp name="Argument.value">127.0.0.1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath">C:\Users\cdg49\Desktop\School\CS 532\Semester_Project\project-team_33</stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Bike-sharing users" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">stopthread</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Read from database" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.MongoException;
+import com.mongodb.client.FindIterable;
+import com.mongodb.ConnectionString;
+import com.mongodb.ServerAddress;
+import com.mongodb.MongoCredential;
+import com.mongodb.MongoClientOptions;
+import com.mongodb.BasicDBObject
+import com.mongodb.client.MongoCursor;
+import java.util.Arrays;
+import org.bson.Document;
+import org.bson.BsonDocument;
+import static com.mongodb.client.model.Filters.*;
+
+try {
+	//create_string = &quot;mongodb://host1:27017&quot;
+	//MongoClient mongoClient = MongoClients.create(create_string)
+	ServerAddress seed1 = new ServerAddress(&quot;127.0.0.1&quot;, 27017);
+	MongoClientSettings settings = MongoClientSettings.builder().applyToClusterSettings(builder -&gt; builder.hosts(Arrays.asList(seed1))).build();
+	MongoClient mongoClient = MongoClients.create(settings);
+
+	//TO-DO: Update to include changing of search query
+	MongoDatabase db = mongoClient.getDatabase(vars.get(&quot;databaseName&quot;));
+	MongoCollection &lt;Document&gt; collection = db.getCollection(vars.get(&quot;collectionName&quot;));
+
+	FindIterable&lt;Document&gt; docs = collection.find(eq(&quot;workingday&quot;, false));
+	MongoCursor&lt;Document&gt; cursor = docs.iterator();
+	String res=&quot;&quot;;
+	while (cursor.hasNext()) {
+		Document doc = cursor.next();
+		res=res+doc.toString() + &quot;\n&quot;;
+	}
+	
+	return  &quot;Matches found: \n&quot; + res; 
+	// MongoClient.close() //Closes instance
+	
+} catch(Exception e){
+	return &quot;Exception: &quot; + e;
+}</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Add to the database" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.MongoException;
+import com.mongodb.client.FindIterable;
+import com.mongodb.ConnectionString;
+import com.mongodb.ServerAddress;
+import com.mongodb.MongoCredential;
+import com.mongodb.MongoClientOptions;
+import com.mongodb.BasicDBObject
+import com.mongodb.client.MongoCursor;
+import java.util.Arrays;
+import org.bson.Document;
+import org.bson.BsonDocument;
+import static com.mongodb.client.model.Filters.*;
+
+try {
+	//create_string = &quot;mongodb://host1:27017&quot;
+	//MongoClient mongoClient = MongoClients.create(create_string)
+	ServerAddress seed1 = new ServerAddress(&quot;127.0.0.1&quot;, 27017);
+	MongoClientSettings settings = MongoClientSettings.builder().applyToClusterSettings(builder -&gt; builder.hosts(Arrays.asList(seed1))).build();
+	MongoClient mongoClient = MongoClients.create(settings);
+
+	//TO-DO: Update to include changing of addition
+	MongoDatabase db = mongoClient.getDatabase(vars.get(&quot;databaseName&quot;));
+	MongoCollection &lt;Document&gt; collection = db.getCollection(vars.get(&quot;collectionName&quot;));
+
+
+	// note, previously tried db.collection.insertOne, db.collection.insertOne, and collection.insertOne
+	Document document = new Document();
+	document.append(&quot;datetime&quot;, &quot;2022-12-12 00:00:00&quot;);
+	document.append(&quot;season&quot;, &quot;1&quot;);
+	document.append(&quot;holiday&quot;, 0);
+	document.append(&quot;workingday&quot;, false);
+	document.append(&quot;weather&quot;, 1);
+	document.append(&quot;temp&quot;, 9.84);
+	document.append(&quot;atemp&quot;, 14.395);
+	document.append(&quot;humidity&quot;, 81);
+	document.append(&quot;windspeed&quot;, 9669);
+	document.append(&quot;casual&quot;, 3);
+	document.append(&quot;registered&quot;, 15);
+	document.append(&quot;count&quot;, 14);
+	collection.insertOne(document);
+ 
+	// MongoClient.close() //Closes instance
+	return  &quot;Successfuly added &quot; + document + &quot; to collection&quot;;
+	
+} catch(Exception e){
+	return &quot;Exception: &quot; + e;
+}</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Delete from database" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.MongoException;
+import com.mongodb.client.FindIterable;
+import com.mongodb.ConnectionString;
+import com.mongodb.ServerAddress;
+import com.mongodb.MongoCredential;
+import com.mongodb.MongoClientOptions;
+import com.mongodb.BasicDBObject
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.model.Filters;
+import java.util.Arrays;
+import org.bson.Document;
+import org.bson.BsonDocument;
+import static com.mongodb.client.model.Filters.*;
+
+try {
+	//create_string = &quot;mongodb://host1:27017&quot;
+	//MongoClient mongoClient = MongoClients.create(create_string)
+
+	ServerAddress seed1 = new ServerAddress(&quot;127.0.0.1&quot;, 27017);
+	MongoClientSettings settings = MongoClientSettings.builder().applyToClusterSettings(builder -&gt; builder.hosts(Arrays.asList(seed1))).build();
+	MongoClient mongoClient = MongoClients.create(settings);
+
+	//TO-DO: Update to include changing of search query
+	MongoDatabase db = mongoClient.getDatabase(vars.get(&quot;databaseName&quot;));
+	MongoCollection &lt;Document&gt; collection = db.getCollection(vars.get(&quot;collectionName&quot;));
+	collection.deleteOne(Filters.eq(&quot;workingday&quot;, false));
+	return  &quot;Query Deleted.&quot;; //adjust for multiple queries
+	
+} catch(Exception e){
+	return &quot;Exception: &quot; + e;
+}</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Update the database" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.MongoException;
+import com.mongodb.client.FindIterable;
+import com.mongodb.ConnectionString;
+import com.mongodb.ServerAddress;
+import com.mongodb.MongoCredential;
+import com.mongodb.MongoClientOptions;
+import com.mongodb.BasicDBObject
+import com.mongodb.client.MongoCursor;
+import java.util.Arrays;
+import org.bson.Document;
+import org.bson.BsonDocument;
+import static com.mongodb.client.model.Filters.*;
+import com.mongodb.client.model.UpdateOptions;
+import com.mongodb.client.model.Updates;
+import com.mongodb.client.result.UpdateResult;
+import org.bson.conversions.Bson;
+import com.mongodb.MongoException;
+
+try {
+	ServerAddress seed1 = new ServerAddress(&quot;127.0.0.1&quot;, 27017);
+	MongoClientSettings settings = MongoClientSettings.builder().applyToClusterSettings(builder -&gt; builder.hosts(Arrays.asList(seed1))).build();
+	MongoClient mongoClient = MongoClients.create(settings);
+
+	MongoDatabase db = mongoClient.getDatabase(vars.get(&quot;databaseName&quot;));
+	MongoCollection &lt;Document&gt; collection = db.getCollection(vars.get(&quot;collectionName&quot;));
+
+	Document query = new Document();
+	query.append(&quot;workingday&quot;, false);
+	
+	UpdateOptions options = new UpdateOptions().upsert(true);
+	Bson updates = Updates.combine( Updates.set(&quot;workingday&quot;, true), Updates.set(&quot;datetime&quot;, &quot;2022-12-12 00:00:00&quot;));
+
+	
+	UpdateResult update_result = collection.updateOne(query, updates, options);
+	//collection.updateOne({&quot;isHoliday&quot;: false}, { $set: {&quot;isHoliday&quot;: true})
+	// 	document.append(&quot;datetime&quot;, &quot;2022-12-12 00:00:00&quot;);
+	// 	FindIterable&lt;Document&gt; docs = collection.find(eq(&quot;workingday&quot;, false));
+	return  &quot;The update result is &quot; + update_result;
+	
+} catch(Exception e){
+	return &quot;Exception: &quot; + e;
+}</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">resultsFromMongoBikeSharingTest.txt</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="false">
+          <boolProp name="displayJMeterProperties">true</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">true</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

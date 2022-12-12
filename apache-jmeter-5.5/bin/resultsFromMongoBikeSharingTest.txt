@@ -1,0 +1,41 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1670880761829,23884,Read from database,200,OK,Bike-sharing users 1-6,text,true,,742637,0,10,10,null,0,0,0
+1670880761296,24420,Read from database,200,OK,Bike-sharing users 1-1,text,true,,742637,0,10,10,null,0,0,0
+1670880761395,24392,Read from database,200,OK,Bike-sharing users 1-2,text,true,,742637,0,10,10,null,0,0,0
+1670880785787,385,Add to the database,200,OK,Bike-sharing users 1-2,text,true,,231,0,10,10,null,0,0,0
+1670880785715,556,Add to the database,200,OK,Bike-sharing users 1-6,text,true,,231,0,10,10,null,0,0,0
+1670880785722,561,Add to the database,200,OK,Bike-sharing users 1-1,text,true,,231,0,10,10,null,0,0,0
+1670880761829,24700,Read from database,200,OK,Bike-sharing users 1-5,text,true,,742637,0,10,10,null,0,0,0
+1670880786296,286,Delete from database,200,OK,Bike-sharing users 1-1,text,true,,14,0,10,10,null,0,0,0
+1670880786272,376,Delete from database,200,OK,Bike-sharing users 1-6,text,true,,14,0,10,10,null,0,0,0
+1670880786172,617,Delete from database,200,OK,Bike-sharing users 1-2,text,true,,14,0,10,10,null,0,0,0
+1670880786530,267,Add to the database,200,OK,Bike-sharing users 1-5,text,true,,231,0,10,10,null,0,0,0
+1670880786798,74,Delete from database,200,OK,Bike-sharing users 1-5,text,true,,14,0,10,10,null,0,0,0
+1670880762230,24706,Read from database,200,OK,Bike-sharing users 1-8,text,true,,742637,0,10,10,null,0,0,0
+1670880786790,157,Update the database,200,OK,Bike-sharing users 1-2,text,true,,95,0,10,10,null,0,0,0
+1670880786583,364,Update the database,200,OK,Bike-sharing users 1-1,text,true,,95,0,10,10,null,0,0,0
+1670880786649,302,Update the database,200,OK,Bike-sharing users 1-6,text,true,,95,0,8,8,null,0,0,0
+1670880786873,99,Update the database,200,OK,Bike-sharing users 1-5,text,true,,95,0,7,7,null,0,0,0
+1670880761894,25082,Read from database,200,OK,Bike-sharing users 1-7,text,true,,742637,0,6,6,null,0,0,0
+1670880786937,41,Add to the database,200,OK,Bike-sharing users 1-8,text,true,,231,0,6,6,null,0,0,0
+1670880786976,38,Add to the database,200,OK,Bike-sharing users 1-7,text,true,,231,0,6,6,null,0,0,0
+1670880786978,52,Delete from database,200,OK,Bike-sharing users 1-8,text,true,,14,0,6,6,null,0,0,0
+1670880787031,106,Update the database,200,OK,Bike-sharing users 1-8,text,true,,95,0,6,6,null,0,0,0
+1670880787014,158,Delete from database,200,OK,Bike-sharing users 1-7,text,true,,14,0,5,5,null,0,0,0
+1670880787172,32,Update the database,200,OK,Bike-sharing users 1-7,text,true,,95,0,5,5,null,0,0,0
+1670880761497,26977,Read from database,200,OK,Bike-sharing users 1-3,text,true,,742637,0,4,4,null,0,0,0
+1670880788474,16,Add to the database,200,OK,Bike-sharing users 1-3,text,true,,231,0,4,4,null,0,0,0
+1670880788491,34,Delete from database,200,OK,Bike-sharing users 1-3,text,true,,14,0,4,4,null,0,0,0
+1670880762228,26305,Read from database,200,OK,Bike-sharing users 1-10,text,true,,742637,0,4,4,null,0,0,0
+1670880788526,22,Update the database,200,OK,Bike-sharing users 1-3,text,true,,95,0,4,4,null,0,0,0
+1670880788534,16,Add to the database,200,OK,Bike-sharing users 1-10,text,true,,231,0,3,3,null,0,0,0
+1670880788551,37,Delete from database,200,OK,Bike-sharing users 1-10,text,true,,14,0,3,3,null,0,0,0
+1670880788589,42,Update the database,200,OK,Bike-sharing users 1-10,text,true,,95,0,3,3,null,0,0,0
+1670880761829,26820,Read from database,200,OK,Bike-sharing users 1-4,text,true,,742637,0,2,2,null,0,0,0
+1670880788649,23,Add to the database,200,OK,Bike-sharing users 1-4,text,true,,231,0,2,2,null,0,0,0
+1670880788672,12,Delete from database,200,OK,Bike-sharing users 1-4,text,true,,14,0,2,2,null,0,0,0
+1670880788684,10,Update the database,200,OK,Bike-sharing users 1-4,text,true,,95,0,2,2,null,0,0,0
+1670880762223,26555,Read from database,200,OK,Bike-sharing users 1-9,text,true,,742637,0,1,1,null,0,0,0
+1670880788778,7,Add to the database,200,OK,Bike-sharing users 1-9,text,true,,231,0,1,1,null,0,0,0
+1670880788786,6,Delete from database,200,OK,Bike-sharing users 1-9,text,true,,14,0,1,1,null,0,0,0
+1670880788792,7,Update the database,200,OK,Bike-sharing users 1-9,text,true,,95,0,1,1,null,0,0,0
