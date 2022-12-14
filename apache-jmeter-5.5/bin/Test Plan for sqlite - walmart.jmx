@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan insert in sqlite-bikesharing" enabled="true">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan for sqlite - walmart" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
@@ -31,7 +31,7 @@
           <stringProp name="checkQuery">select 1</stringProp>
           <stringProp name="connectionAge">5000</stringProp>
           <stringProp name="dataSource">myDatabase</stringProp>
-          <stringProp name="dbUrl">jdbc:sqlite:/Users/amittal/Desktop/project-team_33/bikesharing.db</stringProp>
+          <stringProp name="dbUrl">jdbc:sqlite:/Users/amittal/walmart_data</stringProp>
           <stringProp name="driver">org.sqlite.JDBC</stringProp>
           <boolProp name="keepAlive">true</boolProp>
           <stringProp name="password"></stringProp>
@@ -45,7 +45,7 @@
           <stringProp name="connectionProperties"></stringProp>
         </JDBCDataSource>
         <hashTree/>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="random_store" enabled="false">
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="random_store" enabled="true">
           <stringProp name="maximumValue">100000</stringProp>
           <stringProp name="minimumValue">1000</stringProp>
           <stringProp name="outputFormat"></stringProp>
@@ -57,18 +57,18 @@
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request" enabled="true">
           <stringProp name="dataSource">myDatabase</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">SELECT * FROM bike_sharing LIMIT 1;
+          <stringProp name="query">SELECT * FROM walmart_data LIMIT 1;
 </stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
-          <stringProp name="variableNames">datetime,season,holiday,workingday,weather	,temp,atemp,humidity,windspeed,casual,registered,count</stringProp>
+          <stringProp name="variableNames">Store,Date,Temperature, Fuel_Price,MarkDown1,MarkDown2, MarkDown3,MarkDown4,MarkDown5,CPI,Unemployment,IsHoliday</stringProp>
           <stringProp name="resultVariable"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
           <stringProp name="resultSetMaxRows"></stringProp>
           <stringProp name="resultSetHandler">Store as String</stringProp>
         </JDBCSampler>
         <hashTree/>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="random_Fuel_Price" enabled="false">
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="random_Fuel_Price" enabled="true">
           <stringProp name="variableName">random_Fuel_Price</stringProp>
           <stringProp name="outputFormat"></stringProp>
           <stringProp name="minimumValue">1</stringProp>
@@ -77,7 +77,7 @@
           <boolProp name="perThread">true</boolProp>
         </RandomVariableConfig>
         <hashTree/>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="temperature" enabled="true">
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="temperature" enabled="false">
           <stringProp name="variableName">random_temperature</stringProp>
           <stringProp name="outputFormat"></stringProp>
           <stringProp name="minimumValue">1</stringProp>
@@ -86,7 +86,7 @@
           <boolProp name="perThread">true</boolProp>
         </RandomVariableConfig>
         <hashTree/>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Markdown1" enabled="false">
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Markdown1" enabled="true">
           <stringProp name="variableName">random_markdown1</stringProp>
           <stringProp name="outputFormat"></stringProp>
           <stringProp name="minimumValue">1</stringProp>
@@ -95,7 +95,7 @@
           <boolProp name="perThread">true</boolProp>
         </RandomVariableConfig>
         <hashTree/>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Markdown2" enabled="false">
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Markdown2" enabled="true">
           <stringProp name="variableName">random_markdown2</stringProp>
           <stringProp name="outputFormat"></stringProp>
           <stringProp name="minimumValue">1</stringProp>
@@ -104,7 +104,7 @@
           <boolProp name="perThread">true</boolProp>
         </RandomVariableConfig>
         <hashTree/>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Markdown3" enabled="false">
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Markdown3" enabled="true">
           <stringProp name="variableName">random_markdown3</stringProp>
           <stringProp name="outputFormat"></stringProp>
           <stringProp name="minimumValue">1</stringProp>
@@ -113,7 +113,7 @@
           <boolProp name="perThread">true</boolProp>
         </RandomVariableConfig>
         <hashTree/>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Markdown4" enabled="false">
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Markdown4" enabled="true">
           <stringProp name="variableName">random_markdown4</stringProp>
           <stringProp name="outputFormat"></stringProp>
           <stringProp name="minimumValue">1</stringProp>
@@ -122,7 +122,7 @@
           <boolProp name="perThread">true</boolProp>
         </RandomVariableConfig>
         <hashTree/>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Markdown5" enabled="false">
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Markdown5" enabled="true">
           <stringProp name="variableName">random_markdown5</stringProp>
           <stringProp name="outputFormat"></stringProp>
           <stringProp name="minimumValue">1</stringProp>
@@ -131,7 +131,7 @@
           <boolProp name="perThread">true</boolProp>
         </RandomVariableConfig>
         <hashTree/>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="CPI" enabled="false">
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="CPI" enabled="true">
           <stringProp name="variableName">random_cpi</stringProp>
           <stringProp name="outputFormat"></stringProp>
           <stringProp name="minimumValue">1</stringProp>
@@ -140,7 +140,7 @@
           <boolProp name="perThread">true</boolProp>
         </RandomVariableConfig>
         <hashTree/>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Unempl" enabled="false">
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Unempl" enabled="true">
           <stringProp name="variableName">random_unemployment</stringProp>
           <stringProp name="outputFormat"></stringProp>
           <stringProp name="minimumValue">1</stringProp>
@@ -152,8 +152,7 @@
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Insert walmart store" enabled="true">
           <stringProp name="dataSource">myDatabase</stringProp>
           <stringProp name="queryType">Prepared Update Statement</stringProp>
-          <stringProp name="query">INSERT into bike_sharing (datetime,season,holiday,workingday,weather,temp,atemp,humidity,windspeed,casual,registered,count) 
-values(&apos;2011-01-01 00:00:00&apos;,&apos;1&apos;,&apos;1&apos;,&apos;1&apos;,&apos;1&apos;,&apos;${random_temperature}&apos;,&apos;${random_temperature}&apos;,&apos;70&apos;,&apos;50&apos;,&apos;6&apos;,&apos;10&apos;,&apos;900&apos;);</stringProp>
+          <stringProp name="query">INSERT into walmart_data (Store,Date,Temperature,Fuel_Price,MarkDown1,MarkDown2,MarkDown3,MarkDown4,MarkDown5,CPI,Unemployment,IsHoliday) values(&apos;1000&apos;,&apos;2022-05-28&apos;,&apos;${Temperature_1}&apos;,&apos;${random_Fuel_Price}&apos;,&apos;5007&apos;,&apos;5657&apos;,&apos;9303&apos;,&apos;6022&apos;,&apos;581&apos;,&apos;5620&apos;,&apos;5&apos;,&apos;TRUE&apos;);</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames"></stringProp>
@@ -166,7 +165,7 @@ values(&apos;2011-01-01 00:00:00&apos;,&apos;1&apos;,&apos;1&apos;,&apos;1&apos;
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Update Request" enabled="true">
           <stringProp name="dataSource">myDatabase</stringProp>
           <stringProp name="queryType">Prepared Update Statement</stringProp>
-          <stringProp name="query">Update bike_sharing set season=&apos;200&apos; where temp=&apos;${random_temperature}&apos;;</stringProp>
+          <stringProp name="query">Update walmart_data set Store=2000 where Fuel_Price=&apos;${random_Fuel_Price}&apos;;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames"></stringProp>
@@ -179,7 +178,7 @@ values(&apos;2011-01-01 00:00:00&apos;,&apos;1&apos;,&apos;1&apos;,&apos;1&apos;
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Delete  Request" enabled="true">
           <stringProp name="dataSource">myDatabase</stringProp>
           <stringProp name="queryType">Prepared Update Statement</stringProp>
-          <stringProp name="query">Delete from bike_sharing where temp=&apos;${random_temperature}&apos;;</stringProp>
+          <stringProp name="query">Delete from walmart_data where Fuel_Price=&apos;${random_Fuel_Price}&apos;;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames"></stringProp>
