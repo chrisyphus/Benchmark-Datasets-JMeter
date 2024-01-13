@@ -1,4 +1,5 @@
 **Members**
+
 Christopher Gomez
 
 Aditi Mittal
@@ -14,3 +15,6 @@ In order to run the MongoDB test it will require downloading the MongoDB JavaDri
 
 [BSON](https://search.maven.org/artifact/org.mongodb/bson/4.8.1/jar)
 
+
+**Disclaimer**
+This project was completed during Spring 2023, within the class CS:532 Systems for Data Science at the University of Massachusetts Amherst
